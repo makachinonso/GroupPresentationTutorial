@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unit Testing Express Demo App</title>
+</head>
+<body>
+    <h1>Live API Demo</h1>
+
+    <button onclick="callApi('/api/hello')">Say Hello</button>
+    <button onclick="callApi('/api/random')">Random Number</button>
+
+    <h3>Add Numbers</h3>
+    <input id="addX" placeholder="x">
+    <input id="addY" placeholder="y">
+    <button onclick="addNumbers()">Add</button>
+
+    <h3>Reverse Text</h3>
+    <input id="revText" placeholder="Enter text">
+    <button onclick="reverseText()">Reverse</button>
+
+    <pre id="output"></pre>
+
+    <script>
+        async function callApi(endpoint) {
+            const res = await fetch(endpoint);
+            document.getElementById("output").textContent = JSON.stringify(await res.json(), null, 2);
+        }
+
+        async function addNumbers() {
+            const x = document.getElementById("addX").value;
+            const y = document.getElementById("addY").value;
+            callApi(`/api/add?x=${x}&y=${y}`);
+        }
+
+        async function reverseText() {
+            const text = document.getElementById("revText").value;
+            callApi(`/api/reverse?text=${text}`);
+        }
+    </script>
+</body>
+</html>
