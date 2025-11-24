@@ -1,6 +1,4 @@
-# GroupPresentationTutorial
-
-Unit Testing Express.js Demo Application — Step-by-Step Tutorial
+# Unit Testing Express.js Demo Application — Step-by-Step Tutorial
 This tutorial walks you through:
 ✔ Creating an Express.js app from scratch
 ✔ Adding API routes & a live demo page
