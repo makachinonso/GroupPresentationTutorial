@@ -24,5 +24,10 @@ app.get("/add", (req, res) => {
     res.json({ sum });
 });
 
+app.get("/", (req, res) => {
+  res.send("Welcome! Try /add?a=2&b=3 in the URL.");
+});
+
+
 // Export app for Supertest
 module.exports.app = app;
